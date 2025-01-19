@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+body {
+  background-color: aqua;
+}
+.playGround {
+  border: 2px solid black;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+  overflow: hidden;
+}
+
+.Hidden {
+  visibility: hidden;
+}
+.containerButton {
+  display: grid;
+  grid-column: 1/-1;
+  grid-row: -1/-3;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  z-index: 100;
+}
+
+#canvasRock {
+  height: 100%;
+  width: 110%;
+  transform: translateY(-40%);
+}
+
+#canvasPaper {
+  height: 100%;
+  width: 110%;
+  transform: translateY(-31%);
+}
+#canvasScissor {
+  height: 100%;
+  width: 110%;
+  transform: translateY(-40%);
+}
+.char {
+  background-color: aqua;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
+}
+.boxVillain {
+  grid-column: -10/-2;
+  grid-row: 2/-1;
+}
+#MightyVillain {
+  height: 180%;
+  width: 180%;
+  position: relative;
+  top: -35%;
+  transform: translateX(-30%);
+}
+.boxSiddharth {
+  grid-column: 2/9;
+  grid-row: 3/-1;
+}
+#Siddharth {
+  height: 130%;
+  width: 130%;
+  transform: translateX(-20%);
+  position: relative;
+  top: -3%;
+}
+.boxDhaval {
+  grid-column: 2/9;
+  grid-row: 3/-1;
+  z-index: 5;
+}
+#Dhaval {
+  height: 230%;
+  width: 230%;
+  transform: translateX(-14%);
+  position: relative;
+  top: -45%;
+  /* position: absolute;*/
+}
+.boxPanth {
+  grid-column: 2/9;
+  grid-row: 3/-1;
+  z-index: 5;
+}
+#Panth {
+  height: 230%;
+  width: 230%;
+  transform: translateX(-14%);
+  position: relative;
+  top: -45%;
+  /* position: absolute;*/
+}
+
+.scoreBoard {
+  z-index: 7;
+  grid-column: 4/7;
+  grid-row: 1/5;
+}
+
+@keyframes moveDownWin {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
+.youWin {
+  /* z-index: 8; */
+  width: 120%;
+  height: 190%;
+  position: relative;
+  left: -10%;
+  transform: translateY(-100%);
+  /*Ending-> transform: translateY(-20%); */
+}
+@keyframes moveDownLose {
+  0% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-140%);
+  }
+}
+
+.youLose {
+  width: 180%;
+  height: 150%;
+  position: relative;
+  left: -40%;
+  transform: translateY(-300%);
+}
+.Tie {
+  width: 250%;
+  height: 210%;
+  position: relative;
+  left: -75%;
+  transform: translateY(-250%);
+  /*Ending-> transform: translateY(-180%); */
+}
+@keyframes moveDownTie {
+  0% {
+    transform: translateY(-250%);
+  }
+  100% {
+    transform: translateY(-180%);
+  }
+}
+/* Score */
+.ScoreLayout {
+  pointer-events: none;
+  place-content: center;
+  border: 0.2em solid #bc8f8f;
+  border-radius: 1em;
+  z-index: 10;
+  grid-column: 3/-3;
+  grid-row: 1/2;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+  font-family: "Press Start 2P";
+  display: grid;
+  grid-template-columns: 20% 10% 40% 20% 10%;
+}
+.You {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: palegoldenrod;
+
+  width: 100%;
+  height: 100%;
+  grid-column: 1/2;
+}
+@media (max-width: 900px) {
+  .You {
+    font-size: 15px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 15px;
+  }
+
+  .Comp {
+    font-size: 15px;
+  }
+  .changeChar{
+    font-size:8.5px;
+  }
+  .clearScore{
+    font-size:7.5px;
+  }
+  
+}
+@media (min-width: 360px) and (max-width: 435px) {
+  .You {
+    font-size: 5px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 10px;
+  }
+  .Comp {
+    font-size: 5px;
+  }
+  .CompCounter {
+    font-size: 8px;
+  }
+  .changeChar{
+    font-size:4.2px;
+  }
+  .clearScore{
+    font-size:3px;
+  }
+  
+}
+@media (min-width: 436px) and (max-width: 550px) {
+  .You {
+    font-size: 8px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 10px;
+  }
+  .Comp {
+    font-size: 8px;
+  }
+  .CompCounter {
+    font-size: 8px;
+  }
+  .changeChar{
+    font-size:4.3px;
+  }
+  .clearScore{
+    font-size:3px;
+  }
+}
+@media (min-width: 551px) and (max-width: 750px) {
+  .You {
+    font-size: 10px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 10px;
+  }
+  .Comp {
+    font-size: 10px;
+  }
+  .CompCounter {
+    font-size: 10px;
+  }
+  .changeChar{
+    font-size:5px;
+  }
+  .clearScore{
+    font-size:4.2px;
+  }
+  
+}
+@media (min-width: 751px) and (max-width: 799px) {
+  .You {
+    font-size: 13px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 13px;
+  }
+  .Comp {
+    font-size: 13px;
+  }
+  .CompCounter {
+    font-size: 13px;
+  }
+.changeChar{
+  font-size:6px;
+}
+.clearScore{
+  font-size:5.5px;
+}
+}
+
+@media (max-width: 360px) {
+  .You {
+    font-size: 6px; /* Smaller font for smaller div width */
+  }
+  .Comp {
+    font-size: 6px;
+  }
+  .YouCounter {
+    font-size: 6px;
+  }
+  .CompCounter {
+    font-size: 6px;
+  }
+  .changeChar{
+    font-size:4.1px;
+  }
+  .clearScore{
+    font-size:3.5px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1499px) {
+  .You {
+    font-size: 13px; /* Smaller font for smaller div width */
+  }
+  .YouCounter {
+    font-size: 20px;
+  }
+  .Comp {
+    font-size: 13px;
+  }
+  .CompCounter {
+    font-size: 20px;
+  }
+  .changeChar{
+    font-size:8px;
+  }
+  .clearScore{
+    font-size:7px;
+  }
+  
+}
+
+@media (min-width: 1500px) {
+  .You {
+    font-size: 30px; /* Smaller font for smaller div width */
+  }
+  .Comp {
+    font-size: 25px;
+  }
+  .YouCounter {
+    font-size: 30px;
+  }
+  .CompCounter {
+    font-size: 30px;
+  }
+  .changeChar{
+    font-size:15px;
+  }
+  .clearScore{
+    font-size:13px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .You {
+    font-size: 33px; /* Larger font for larger div width */
+  }
+  .YouCounter {
+    font-size: 37px;
+  }
+  .Comp {
+    font-size: 33px;
+  }
+  .CompCounter {
+    font-size: 37px;
+  }
+  .changeChar{
+    font-size:15px;
+  }
+  .clearScore{
+    font-size:15px;
+  }
+}
+@media (min-width: 1920px) {
+  .You {
+    font-size: 37px; /* Larger font for larger div width */
+  }
+  .YouCounter {
+    font-size: 45px;
+  }
+  .Comp {
+    font-size: 37px;
+  }
+  .CompCounter {
+    font-size: 45px;
+  }
+  .changeChar{
+    font-size:22px;
+  }
+  .clearScore{
+    font-size:20px;
+  }
+}
+.YouCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: greenyellow;
+  text-shadow: 1em 1em 3em rgba(0, 0, 0, 0.8);
+  grid-column: 2/3;
+}
+.Comp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: palegoldenrod;
+  grid-column: -2/-3;
+}
+.CompCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: mistyrose;
+  text-shadow: 1em 1em 3em rgba(0, 0, 0, 0.8);
+  grid-column: -1/-2;
+}
+
+/* change character and clear score */
+.changeChar {
+  cursor: pointer;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P";
+  margin-left: -1.7%;
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 10px 10px;
+  border: 2px solid #f8bbbb;
+  z-index: 9;
+  background-color: #bc8f8f;
+  grid-column: 5/6;
+  grid-row: 2/3;
+  transition: transform 0.3s ease, height 0.3s ease; /* Smooth animation */
+  transform-origin: bottom;
+}
+.changeChar:hover {
+  height: 70%; /* Expand height on hover */
+  transform: translateY(-5%); /* Slight upward pull effect */
+  background-color: #bc8f8f; /* Optional: change background for visual effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+}
+.clearScore {
+  cursor: pointer;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P";
+  z-index: 9;
+  width: 100%;
+  height: 50%;
+  border: 2px solid #f8bbbb;
+  border-radius: 0 0 10px 10px;
+  background-color: #bc8f8f;
+  grid-column: 6/7;
+  grid-row: 2/3;
+}
+.clearScore:hover {
+  height: 70%; /* Expand height on hover */
+  transform: translateY(-5%); /* Slight upward pull effect */
+  background-color: #bc8f8f; /* Optional: change background for visual effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+}
+

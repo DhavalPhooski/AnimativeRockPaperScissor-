@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/page1.css" />
+  </head>
+  <body>
+    <div class="playGround">
+      <div class="ScoreLayout">
+        <div class="You">You :</div>
+        <div class="YouCounter">0</div>
+        <div class="Comp">Comp :</div>
+        <div class="CompCounter">0</div>
+      </div>
+      <div class="scoreBoard">
+        <img class="youWin" src="ScoreBoard/WinBoard.png" />
+        <img class="youLose" src="ScoreBoard/LoseBoard.png" />
+        <img class="Tie" src="ScoreBoard/TieBoard.png" />
+      </div>
+      <div class="changeChar">Character</div>
+      <div class="clearScore">Clear Score</div>
+      <div class="char">
+        <div class="boxVillain">
+          <canvas id="MightyVillain"></canvas>
+        </div>
+
+        <div class="boxSiddharth Hidden">
+          <canvas id="Siddharth"></canvas>
+        </div>
+        <div class="boxDhaval Hidden">
+          <canvas id="Dhaval"></canvas>
+        </div>
+        <div class="boxPanth Hidden">
+          <canvas id="Panth"></canvas>
+        </div>
+      </div>
+      <div class="containerButton">
+        <canvas id="canvasRock"></canvas>
+        <canvas id="canvasPaper"></canvas>
+        <canvas id="canvasScissor"></canvas>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
